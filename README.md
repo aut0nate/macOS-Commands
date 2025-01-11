@@ -89,3 +89,4 @@ security find-generic-password -wa <WiFi_SSID>
 
 - **[iTerm2:](https://iterm2.com/)** A terminal emulator for macOS.
 - **[Homebrew:](https://brew.sh/)** The missing package manager for macOS.
+- **[OhMyZsh:](https://ohmyz.sh/)** Oh My Zsh is a framework for managing your Zsh configuration.
