@@ -78,6 +78,9 @@ sudo touch id
 # Display network interface configuration, including IP addresses and status.
 ifconfig
 
+# Display the current IP address assigned to the network interface
+ipconfig getifaddr en0
+
 # Display the upload and download speed of the network connection.
 networkQuality
 
