@@ -41,7 +41,15 @@ softwareupdate -iaR
 ## Process Management
 
 ```bash
-# Displays a list of processes that are using internet connections.
+# List open Internet sockets with:
+# - Numeric port numbers (-P) instead of service names
+# - Numeric IP addresses (-n) instead of resolving hostnames
+# - Network-related files and connections (-i)
+lsof -P -i -n
+
+# List open Internet sockets (-i) with numeric addresses (-n) and port numbers (-P)
+# Extract only the first column (process names) using cut
+# Remove duplicate entries with uniq
 lsof -P -i -n | cut -f 1 -d " " | uniq
 ```
 
@@ -51,11 +59,11 @@ lsof -P -i -n | cut -f 1 -d " " | uniq
 # Displays software version information.
 sw_vers
 
-# Displays detailed system information including software and hardware details.
-system_profiler SPSoftwareDataType SPHardwareDataType
-
 # Displays available data types that can be queried using the system_profiler command.
 system_profiler -listDataTypes
+
+# Displays detailed system information including software and hardware details.
+system_profiler SPSoftwareDataType SPHardwareDataType
 
 # Displays detailed system security information (requires sudo privileges).
 sudo /usr/libexec/mdmclient QuerySecurityInfo
@@ -81,8 +89,32 @@ ifconfig
 # Display the current IP address assigned to the network interface
 ipconfig getifaddr en0
 
+# Flush the DNS cache to clear any stored domain name resolutions
+sudo dscacheutil -flushcache
+
+# Restart the mDNSResponder service to apply the DNS cache flush
+sudo killall -HUP mDNSResponder
+
 # Display the upload and download speed of the network connection.
 networkQuality
+
+# Display real-time network activity for all connections
+nettop
+
+# Display real-time network routing table information
+nettop -m route
+
+# Show real-time network activity filtered to Wi-Fi connections only
+nettop -t wifi
+
+# Show real-time network activity filtered to wired (Ethernet) connections only
+nettop -t wired
+
+# Show real-time network activity for TCP connections only
+nettop -m tcp
+
+# Show real-time network activity for UDP connections only
+nettop -m udp
 
 # Retrieve saved Wi-Fi passwords for a specified network (requires password entry).
 security find-generic-password -wa <WiFi_SSID>
