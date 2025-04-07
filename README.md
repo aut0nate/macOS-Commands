@@ -2,7 +2,7 @@
 
 ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
 
-This repository contains a collection of macOS commands and tools that I’ve found particularly useful as part of my learning process. I have grouped this into categories for easy reference.
+This repository contains a collection of macOS commands and tools that I’ve found particularly useful. I have grouped this into categories for easy reference.
 
 ---
 
